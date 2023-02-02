@@ -1,0 +1,60 @@
+<div class="row">
+    <header>
+        <app-admin-header></app-admin-header>
+    </header>
+  </div>
+  <div class="row">
+    <main>
+        <div class="row">
+            <form (submit)="saveShow(showForm.value)" action="" #showForm="ngForm">
+        <div class="form-group row">
+            <label for="multiplex" class="col-sm-2 col-form-label">Multiplex:</label>
+            <div class="col-sm-10 col-md-8 col-lg-6">
+              <select class="form-select" [(ngModel)]="multiplex" required name="multiplex" id="multiplex" class="form-control"
+              [class.is-valid]="t_multiplex.valid && t_multiplex.touched" [class.is-invalid]="t_multiplex.invalid && t_multiplex.touched" #t_multiplex="ngModel">
+                <option selected value="">Select Multiplex</option>
+                <option *ngFor="let multiplex of multiplexes" [ngValue]=multiplex>{{multiplex.name}}</option>
+              </select>
+              <!-- <span *ngIf="!t_multiplex.touched && multiplex.city.name!='' "span>City : {{multiplex.city.name}}</span> -->
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="screen" class="col-sm-2 col-form-label">Screen:</label>
+            <div class="col-sm-10 col-md-8 col-lg-6">
+              <select class="form-select" ngModel required name="screen" id="screen" class="form-control"
+              [class.is-valid]="t_screen.valid && t_screen.touched" [class.is-invalid]="t_screen.invalid && t_screen.touched" #t_screen="ngModel">
+                <option selected value="">Select Screen</option>
+                <option *ngFor="let screen of multiplex.screens " [ngValue]=screen>{{screen.name}}</option>
+              </select>
+              <!-- <span *ngIf="!t_multiplex.touched && multiplex.city.name!='' "span>City : {{multiplex.city.name}}</span> -->
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="movie" class="col-sm-2 col-form-label">movie:</label>
+            <div class="col-sm-10 col-md-8 col-lg-6">
+              <select class="form-select" ngModel required name="movie" id="movie" class="form-control"
+              [class.is-valid]="t_movie.valid && t_movie.touched" [class.is-invalid]="t_movie.invalid && t_movie.touched" #t_movie="ngModel">
+                <option selected value="">Select Movie</option>
+                <option *ngFor="let movie of movies" [ngValue]=movie>{{movie.title}}</option>
+              </select>
+              <!-- <span *ngIf="!t_multiplex.touched && multiplex.city.name!='' "span>City : {{multiplex.city.name}}</span> -->
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label  class="form-label" for="startTime">StartTime</label>
+            <div class="col-sm-10 col-md-8 col-lg-6">
+            <input class="form-control" ngModel type="datetime-local" name="startTime" id="starttime">
+            </div>
+          </div>
+          <br>
+          <button class="btn btn-primary" type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+  </div>
+  <div class="row">
+    <footer>
+        <app-admin-footer></app-admin-footer>
+    </footer>
+  </div>

@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: Bookmyshow-APi-Gateway
+  cloud:
+    gateway:
+      routes:
+      - id: bookmyshow-info
+        uri:
+          lb://bookmyshow-info
+        predicates:
+        - Path=/info/**
+      - id: bookmyshow-booking
+        uri:
+          lb://bookmyshow-booking
+        predicates:
+        - Path=/booking/**
+#      - id: AIRLINES-INFO-SERVICES
+#        uri:
+#          lb://AIRLINES-INFO-SERVICES
+#        predicates:
+#        - Path=/flight/**
+#      - id: AIRLINES-TICKET-SERVICES
+#        uri:
+#          lb://AIRLINES-TICKET-SERVICES
+#        predicates:
+#        - Path=/seat/**
+      - id: bookmyshow-auth
+        uri:
+          lb://BOOKMYSHOW-AUTH
+        predicates:
+        - Path=/auth/**
+        
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+          cors-configurations: 
+            '[/**]':
+              allowed-origins: "*"
+              allowed-methods: "*"
+              allowed-headers: "*"
+        
+        
+server:
+  port: 8888
+  

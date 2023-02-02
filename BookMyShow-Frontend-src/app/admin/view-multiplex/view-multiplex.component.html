@@ -1,0 +1,68 @@
+<div class="row">
+    <header> 
+        <app-admin-header></app-admin-header>    
+    </header> 
+</div>
+<div class="row">
+    <!-- <main>
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th>Show Id</th>
+                    <th>Show Time</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Id1</td>
+                    <td>Name1</td>
+                    <td>City1</td>
+                </tr>
+                <tr>
+                    <td>Id2</td>
+                    <td>Name2</td>
+                    <td>City2</td>
+                </tr>
+                <tr>
+                    <td>Id3</td>
+                    <td>Name3</td>
+                    <td>City3</td>
+                </tr>
+            </tbody>
+        </table>
+    </main> -->
+
+    <main style="min-height:500px">
+        <h2>Multiplexes</h2>
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th>Multiplex ID</th>
+                    <th>Multiplex name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>No of Screens</th>
+                    <!-- <th>Edit</th> -->
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let multiplex of multiplexList">
+                    <td>{{multiplex.id}}</td>
+                    <td>{{multiplex.name}}</td>
+                    <td>{{multiplex.address}}</td>
+                    <td>{{multiplex.city.name}}</td>
+                    <td>{{multiplex.noOfScreens}}</td>
+                    <!-- <td><button (click)="updateMultiplex(multiplex.id)" class="btn btn-primary">Edit</button></td> -->
+                    <td><button (click)="deleteMultiplex(multiplex)" class="btn btn-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+<div class="row">
+    <footer>
+        <app-admin-footer></app-admin-footer>      
+    </footer>
+</div>

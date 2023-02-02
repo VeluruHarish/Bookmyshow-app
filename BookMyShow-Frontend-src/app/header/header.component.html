@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<div class="wrapper">
+  <nav>
+
+  <!---------------- Search Bar -------------------->
+    <input type="checkbox" id="show-search">
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <!--------------- NavBar ------------------------->
+    <div class="content">
+      <div class="logo">
+     
+        <a routerLink="/user-home"><img src="assets/img/logo.PNG" alt="QubeMovies"></a>
+      </div>
+      <div class="link-div">
+        <ul class="links">
+          <li><a routerLink="/user-home">Home</a></li>
+          <!-- <li>
+            <a class="desktop-link">City</a>
+            <input type="checkbox" id="show-features">  
+            <label for="show-features">City</label>
+            <ul>
+              <li><a routerLink="/user-home">Mysore</a></li>
+              <li><a routerLink="/user-home">Bangalore</a></li>
+              <li><a routerLink="/user-home">Chennai</a></li>
+            </ul>
+          </li> -->
+          <li><a *ngIf="isLoggedIn()"  class="btn" (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+ 

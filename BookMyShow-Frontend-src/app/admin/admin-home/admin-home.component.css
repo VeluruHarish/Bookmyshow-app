@@ -1,0 +1,44 @@
+header{
+    text-align: center;
+    padding-top: 0px;
+    height: 50px; 
+}
+
+main{
+    padding: 10px 20px;
+    min-height: fit-content; 
+    background-color: beige; 
+}
+
+footer{
+    /* padding-top: 40px; */
+    min-height: 100px;
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    margin-top: 20px;
+    max-width: 250px;
+    height: 350px;
+    border-radius: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.card-img-top{
+    height: 150px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+

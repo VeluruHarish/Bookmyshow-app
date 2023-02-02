@@ -1,0 +1,156 @@
+:root {
+  --color: #3c3163;
+  /* --transition-time: 0.5s; */
+  --bg_color:#000;
+  --align:center;
+  --text_color:#fff;
+}
+  /* * {
+    box-sizing: border-box;
+  } */
+
+header{
+  margin: 0;
+  background-color: #171c24;
+  color: white;
+  text-align: var(--align);
+  padding-top: 0px;
+  /* height: 100px;  */
+  /* background-repeat: no-repeat; */
+}
+
+main{
+  padding: 0;
+  min-height: 400px;  
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* font-family: 'Open Sans'; */
+  background: #fafafa;
+}
+
+/*----------------- Home Banner ----------------*/
+.user-home-banner {
+    /* display: table; */
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: var(--align);
+    color: var(--text_color);
+    background-color: var(--bg_color);
+  }
+  /* .user-home-banner>img{
+    opacity: 0;
+  } */
+
+  a {
+    color: inherit;
+  }
+  
+
+
+  /* -----------List Of Movies--------------------- */
+  .cards-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .cards-wrapper {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* margin: 0 10px; */
+    width: max-content;
+  }
+
+/* 
+.col1, .col2{
+  display: flex;
+  flex: 50%;
+  max-width: 25%;
+  padding: 0 4px;
+  
+} */
+  .card {
+    height: 17em;
+    width: 12em;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.2em;
+    padding: 1em;
+    margin:1em 2em;
+    background-image: var(--bg-img);
+    text-decoration: none;
+    opacity: 1;
+  }
+  .card:hover  {
+    opacity: 0.5;
+    color: #171c24;
+  }
+
+
+  .card h1 {
+    margin: 7px 0px;
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+  
+  .card p {
+    font-size: 0.75em;
+    font-family: 'Open Sans';
+    margin-top: 0.5em;
+    line-height: 2em;
+  }
+
+
+  footer{
+    padding-top: 40px;
+    min-height: 100px;
+    text-align: var(--align);
+  }
+  
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 1285px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .info {
+      justify-content: center;
+    }
+    .card-grid-space .num {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .cards-wrapper {
+      padding: 4rem 2rem;
+    }
+    .card {
+      max-width: calc(100vw - 4rem);
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .info {
+      display: block;
+      text-align: center;
+    }
+    .info h1 {
+      margin: 0;
+    }
+  }

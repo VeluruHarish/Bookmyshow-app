@@ -1,0 +1,117 @@
+<div class="row">
+    <header> 
+        <app-admin-header></app-admin-header>    
+    </header> 
+</div>
+<div class="row">
+    <main>
+        <div class="back">
+            <div class="div-center">
+                <div class="content">
+                    <h3>Add Multiplex</h3>
+                    <hr />
+                    <form (submit)="saveMultiplex()" #form="ngForm" class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Id:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input [(ngModel)]="multiplex.id" required type="number" name="id" id="id" class="form-control"
+                                [class.is-valid]="t_id.valid && t_id.touched" [class.is-invalid]="t_id.invalid && t_id.touched" #t_id="ngModel">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Theatre Name:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input [(ngModel)]="multiplex.name" required type="text" name="name" id="name" class="form-control"
+                                [class.is-valid]="t_name.valid && t_name.touched" [class.is-invalid]="t_name.invalid  && t_name.touched" #t_name="ngModel">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Address:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input [(ngModel)]="multiplex.address" required type="text" name="address" id="address" class="form-control"
+                                [class.is-valid]="t_address.valid && t_address.touched" [class.is-invalid]="t_address.invalid && t_address.touched" #t_address="ngModel">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">City:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <!-- <select name="genre" class="form-control">
+                                    <option value="">---Select---</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Fiction">Fiction</option>
+                                    <option value="Drama">Drama</option>
+                                </select> -->
+                                <select class="form-select" [(ngModel)]="multiplex.city"  name="city" id="city" class="form-control" 
+                                    [class.is-valid]="t_city.valid && t_city.touched" [class.is-invalid]="t_city.invalid && t_city.touched" #t_city="ngModel">
+                                    <option selected value="">Select city</option>
+                                    <option *ngFor="let city of cities" [ngValue]=city>{{city.name}}</option>
+                                </select>
+                                <span *ngIf="!t_city.touched && multiplex.city.name!='' "span>City : {{multiplex.city.name}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">No Of Screens:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input [(ngModel)]="multiplex.noOfScreens" required min="1" type="number" name="noOfScreens" (change)="initScreens()" id="noOfScreens" class="form-control" 
+                    [class.is-valid]="t_noOfScreens.valid && t_noOfScreens.touched" [class.is-invalid]="t_noOfScreens.invalid && t_noOfScreens.touched" #t_noOfScreens="ngModel">
+                            </div>
+                        </div>
+                        <form #formarray="ngForm">
+                            <div class="form-group" *ngIf="multiplex.noOfScreens>0">
+                              <label class="col-sm-2 col-form-label">Screens:</label>
+                              <div class="col-sm-10 col-md-10 col-lg-10">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>ID</th>
+                                      <th>Name</th>
+                                      <th>Number of seats</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let screen of multiplex.screens; let i = index">
+                                      <td>
+                                        <input type="number" name="id" [(ngModel)]="screen.id" required min="1" class="form-control"
+                                        [class.is-valid]="t_screenid.valid && t_screenid.touched" [class.is-invalid]="t_screenid.invalid && t_screenid.touched" #t_screenid="ngModel">
+                                      </td>
+                                      <td>
+                                        <input type="text" name="name" [(ngModel)]="screen.name" required class="form-control"
+                                        [class.is-valid]="t_screenName.valid && t_screenName.touched" [class.is-invalid]="t_screenName.invalid && t_screenName.touched" #t_screenName="ngModel">
+                                      </td>
+                                      <td>
+                                        <input type="number" name="noOfSeats" [(ngModel)]="screen.noOfSeats" min="10" required class="form-control"
+                                        [class.is-valid]="t_noOfSeats.valid && t_noOfSeats.touched" [class.is-invalid]="t_noOfSeats.invalid && t_noOfSeats.touched" #t_noOfSeats="ngModel">
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                        </form>
+                          <div class="row">
+                            <div class="col-md-2">
+                              <button type="submit"  [disabled]="form.invalid || formarray.invalid" class="btn btn-primary">Submit</button>
+                            </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div class="row">
+    <footer>
+        <app-admin-footer></app-admin-footer>      
+    </footer>
+</div>

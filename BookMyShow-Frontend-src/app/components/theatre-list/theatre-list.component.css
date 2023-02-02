@@ -1,0 +1,105 @@
+/*-------------- NavBar --------------------*/
+header{
+    text-align: center;
+    padding-top: 0px;
+    height: 50px;
+    /* margin-bottom: 20px; */
+}
+
+
+/* -----------Theatre Info ---------------- */
+main{
+    margin-top: 0;
+    padding: 0;
+    min-height: 400px;  
+}
+
+.movie-name{
+    display: flex;
+}
+.dates{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+}
+
+.dates button{
+    margin: 10px;
+}
+
+.theatre-header{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    justify-content: flex-start;
+    margin-left: 10px;
+    background-color: #25272b;
+    color: white;
+    height: 100px;
+    margin-top: 0px;
+    padding: 20px 20px;
+}
+
+span>img{
+    width: 10px;
+    height: 10px;
+}
+
+.theatre-list{
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.theatre-details{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.show-timings>ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+ul>li{
+     list-style-type: none;
+}
+
+.show-time-checkbox{
+    display: inline-block;
+    border-radius: 5px;
+}
+
+ul>li{
+    margin: 10px;
+    padding: 10px;
+}
+/* .show-time-checkbox:hover{
+    background-color: green;
+    color: white;
+} */
+
+.btn:hover{
+    color: white;
+}
+
+a{
+    margin-right: 20px;
+    padding-right:30px;
+    
+}
+
+p>span{
+    margin: 2px;
+    padding: 2px;
+}
+
+
+/* ---------------Footer-------------------- */
+footer{
+    padding-top: 40px;
+    min-height: 100px;
+    text-align: center;
+}

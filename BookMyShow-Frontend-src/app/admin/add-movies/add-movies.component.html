@@ -1,0 +1,195 @@
+<div class="header-row">
+    <header> 
+        <app-admin-header></app-admin-header>    
+    </header> 
+</div>
+<div class="main-row">
+    <main>
+        <div class="back">
+            <div class="div-center">
+                <div class="content">
+                    <h3>Movie Details</h3>
+                    <hr/>
+                    <form (submit)="add_movies(movieapp.value)" #movieapp="ngForm">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Movie Id:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_movieid="ngModel" pattern="[0-9]+" required class="form-control"
+                                name="id" id="id" [class.is-invalid]="t_movieid.invalid && t_movieid.touched">
+                                <p *ngIf="t_movieid.invalid && t_movieid.touched" class="text-danger">
+                                    <small *ngIf="t_movieid.errors?.['required']">MovieID is required</small>
+                                    <small *ngIf="t_movieid.errors?.['pattern']">Movie ID should be Numbers ONLY</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Movie Title:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_moviename="ngModel" pattern="[a-zA-Z0-9\s]+" required class="form-control"
+                                    name="title" id="name" [class.is-invalid]="t_moviename.invalid && t_moviename.touched"
+                                    [class.is-valid]="t_moviename.valid ">
+                                <p *ngIf="t_moviename.invalid && t_moviename.touched" class="text-decoration-line-through text-danger">
+                                    <small *ngIf="t_moviename.errors?.['required']">Moviename is required</small>
+                                    <small *ngIf="t_moviename.errors?.['pattern']">Movie Name should be alphanumeric</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="genre" class="col-sm-2 col-form-label">genre:</label>
+                            <div class="col-sm-10 col-md-8 col-lg-6">
+                              <select class="form-select" ngModel required name="genre" id="genre" class="form-control" 
+                              [class.is-valid]="t_genre.valid && t_genre.touched" [class.is-invalid]="t_genre.invalid && t_genre.touched" #t_genre="ngModel">
+                                <option selected value="">Select Genre</option>
+                                <option *ngFor="let genre of genres" [ngValue]=genre>{{genre}}</option>
+                              </select>
+                              <!-- <span *ngIf="!t_genre.touched && multiplex.genre.name!='' "span>genre : {{multiplex.genre.name}}</span> -->
+                            </div>
+                          </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Rating:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_rating="ngModel" type="number" required class="form-control" name="rating" id="format"
+                                [class.is-invalid]="t_rating.invalid && t_rating.touched">
+                            <p *ngIf="t_rating.invalid && t_rating.touched" class="text-decoration-line-through text-danger">
+                                <small *ngIf="t_rating.errors?.['required']">Rating is required</small>
+                                <small *ngIf="t_rating.errors?.['type']"> Rating should be numbers </small>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Language:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_language="ngModel" pattern="[a-zA-Z\s]+" required class="form-control" name="language"
+                                id="language" [class.is-invalid]="t_language.invalid && t_language.touched">
+                            <p *ngIf="t_language.invalid && t_language.touched" class="text-decoration-line-through text-danger">
+                                <small *ngIf="t_language.errors?.['required']">Language is required</small>
+                                <small *ngIf="t_language.errors?.['pattern']">Language name should be in Letters</small>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Format:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_format="ngModel" pattern="[a-zA-Z0-9\s]+" required class="form-control" name="format"
+                                id="format" [class.is-invalid]="t_format.invalid && t_format.touched">
+                            <p *ngIf="t_format.invalid && t_format.touched" class="text-decoration-line-through text-danger">
+                                <small *ngIf="t_format.errors?.['required']">Format is required</small>
+                                <small *ngIf="t_format.errors?.['pattern']">Format should be alphanumeric</small>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">DurationInMin:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_duration="ngModel" pattern="[0-9]+" required class="form-control"
+                                name="duration" id="duration" [class.is-invalid]="t_duration.invalid && t_duration.touched">
+                            <p *ngIf="t_duration.invalid && t_duration.touched" class="text-danger">
+                                <small *ngIf="t_duration.errors?.['required']">DurationINMins is required</small>
+                                <small *ngIf="t_duration.errors?.['pattern']">DurationINMins should be Numbers ONLY</small>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">ReleaseDate:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_releasedate="ngModel" type="date" required class="form-control"
+                                name="dateOfRelease" id="releasedate" [class.is-invalid]="t_releasedate.invalid && t_releasedate.touched">
+                            <p *ngIf="t_releasedate.invalid && t_releasedate.touched" class="text-danger">
+                                <small *ngIf="t_releasedate.errors?.['required']">releasedate is required</small>
+                                <small *ngIf="t_releasedate.errors?.['type']">Not a valid</small>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">About:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <textarea ngModel #t_about="ngModel"  required class="form-control"
+                                name="about" id="about" [class.is-invalid]="t_about.invalid && t_about.touched"></textarea>
+                            <p *ngIf="t_about.invalid && t_about.touched" class="text-danger">
+                                <small *ngIf="t_about.errors?.['required']">About is required</small>
+                                
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Cast:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <textarea ngModel #t_cast="ngModel"  required class="form-control"
+                                name="cast" id="cast" [class.is-invalid]="t_cast.invalid && t_cast.touched"></textarea>
+                            <p *ngIf="t_cast.invalid && t_cast.touched" class="text-danger">
+                                <small *ngIf="t_cast.errors?.['required']">About Cast is required</small>
+                                
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Crew:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <textarea ngModel #t_crew="ngModel"  required class="form-control"
+                                name="crew" id="crew" [class.is-invalid]="t_crew.invalid && t_crew.touched"></textarea>
+                            <p *ngIf="t_crew.invalid && t_crew.touched" class="text-danger">
+                                <small *ngIf="t_crew.errors?.['required']">About Crew is required</small>
+                        
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">BackgroundImg:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_bgimage="ngModel" required class="form-control"
+                                name="backgroundImage" id="backgroundImage" [class.is-invalid]="t_bgimage.invalid && t_bgimage.touched">
+                            <p *ngIf="t_bgimage.touched" class="text-danger">
+                                <small *ngIf="t_bgimage.errors?.['required']">Image is required</small> 
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Image:</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input ngModel #t_image="ngModel" required class="form-control"
+                                name="image" id="crew" [class.is-invalid]=" t_image.invalid && t_image.touched">
+                            <p *ngIf="t_image.touched" class="text-danger">
+                                <small *ngIf="t_image.errors?.['required']">Image is required</small> 
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <button class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div class="footer-row">
+    <footer>
+        <app-admin-footer></app-admin-footer>      
+    </footer>
+</div>

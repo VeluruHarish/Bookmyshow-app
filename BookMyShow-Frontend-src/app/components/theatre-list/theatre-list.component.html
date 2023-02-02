@@ -1,0 +1,62 @@
+ <!---------------- NavBar ---------------->
+<div>
+  <header> 
+    <app-header></app-header>    
+  </header> 
+</div>
+
+<div class="">
+  <main>
+    <div class="theatre-header"> 
+       <div class="movie-name">
+          <h1>{{_globalService.movies?.title}}</h1>
+      </div>
+
+      <!------------ List Of Dates    ------------- --> 
+      <div class="dates offset-lg-2 offset-md-6 " >
+          <button class="btn btn-primary date" *ngFor="let showWithDate of finalResults"
+            (click)="setResults(showWithDate.results)">{{showWithDate.date}}</button>
+      </div>
+    </div>
+  <!---------------- Theatre Info ---------------->
+    <div class="theatre-list">
+        <div class="table-responsive">
+            
+            <table class="table">
+              <tbody>
+                <tr *ngFor="let multiplexobj of results">
+                  <td>
+                    <div class="theatre-details">
+                        <h2>{{multiplexobj?.multiplex?.name}}</h2>
+                        <h4>{{multiplexobj?.multiplex?.city?.name}}</h4>
+                        <p><span><img src="assets/img/location.png" alt=""></span>{{multiplexobj?.multiplex?.address}}</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="show-timings">
+                      <ul >
+                        <li *ngFor="let show of multiplexobj.shows" >
+                          <a routerLink="/seat-layout/{{show?.id}}">
+                            <button class="btn btn-light">{{show.startTime| date:"shortTime"}}</button>
+                        </a>  
+                        <!-- <span>{{show.screen.name}}</span> -->
+                        </li>
+                        
+                    </ul>
+                        <p><span><img src="assets/img/circle.png" alt=""></span>Click on time to Book </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table> 
+          </div>
+    </div>
+  </main>
+</div>
+
+<!---------------- Footer ---------------->
+<div>
+  <footer>
+    <app-footer></app-footer>      
+  </footer>
+</div>

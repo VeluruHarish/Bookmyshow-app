@@ -1,0 +1,45 @@
+<div class="row">
+    <header> 
+      <app-header></app-header>    
+    </header> 
+  </div>
+  <div class="row">
+      <main>
+          <!-- Main Body -->
+          <section>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-sm-5 col-md-6 col-12 pb-4" >
+                          <h1>Reviews</h1>
+                          <div class="comment mt-4 text-justify float-left" *ngFor="let review of reviews">
+                              <h4>{{review.user}}</h4>
+                              <br>
+                              <p>{{review.reviewText}}</p>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                          <form id="algin-form">
+                              <div class="form-group">
+                                  <h4>Add Your Review</h4>
+                                  <label for="review">Review</label>
+                                  <textarea [(ngModel)]="review.reviewText" name="msg" id=""msg cols="30" rows="5" class="form-control" ></textarea>
+                              </div>
+  
+                              <div class="form-group">
+                                  <!-- <a href="/home">
+   
+                                  </a> -->
+                                  <button type="button" (click)="postReview()" id="post" class="btn">Post Reviews</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </main>
+    </div>
+    <div class="row">
+      <footer>
+        <app-footer></app-footer>      
+      </footer>
+    </div>

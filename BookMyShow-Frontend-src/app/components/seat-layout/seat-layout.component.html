@@ -1,0 +1,27 @@
+ <!---------------- NavBar ---------------->
+<div>
+    <header>
+      <app-header></app-header>
+    </header>
+  </div>
+
+<!------------------ Seat Layout ------------------>
+  <div class="">
+    <h2>Seat Chart Layout -{{_globalService.movies?.title}}</h2>
+    <div class="layout btn-toolbar" role="toolbar">
+        <form class="layout-center" role="toolbar" aria-label="Second group" (submit)="Bookseats()" #Form="ngForm" >
+            <div class="1" *ngFor="let seat of seatList">
+                <input type="checkbox" name={{seat.id}} [(ngModel)]=seat.checked [disabled]="seat.booked" class="btn-check" id={{seat.id}} autocomplete="off">
+                <label class="btn btn-outline-primary" for={{seat.id}}>{{seat.seatNo}}</label>
+            </div>
+        <button type="button" (click)="Bookseats()" class="btn btn-info">Book</button>
+        </form>
+    </div>
+</div>
+
+<!---------------- Footer ---------------->
+<div>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>

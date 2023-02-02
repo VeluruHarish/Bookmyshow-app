@@ -1,0 +1,90 @@
+  <!---------------- NavBar ---------------->
+<div>
+    <header> 
+      <app-header></app-header>    
+    </header> 
+  </div>
+    <!---------------- Main_Content ---------------->
+  <div class="container-fluid">
+    <main>
+         <!---------------- Movie_Info_Banner ---------------->
+        <div class="movie-container">
+            <div class="container-head">
+                <img class="background-img" src="{{movies?.backgroundImage}}" alt="Background Image">
+                <div class="container-overlay">
+                    <div class="overlay-img">
+                        <img class="overlay-img1" src="{{movies?.image}}" alt="Image">
+                    </div>
+                    <div class="overlay-text">
+                        <h1 class="movie-name">{{movies?.title}}</h1>
+                        <div class="icons8-star-filled">
+                            <img src="https://img.icons8.com/material-outlined/24/337BE4/filled-star.png"/>
+                            <h4>{{movies?.rating}}/5</h4>
+                        </div>
+                        <div class="movie-details">
+                            <div class="movie-details1">
+                                <div class="version">
+                                    <h5>{{movies?.format}}</h5>
+                                </div>
+                                <div class="lang">
+                                    <h5>{{movies?.language}}</h5> 
+                                </div>
+                            </div>
+                            <div class="movie-details2">
+                                <div class="duration">{{movies?.duration}}min<span>  •  </span>
+                                    <h5>{{movies?.genre}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="button">
+                                <a routerLink="/view-reviews/{{movies?.id}}">
+                                    <button  class=" btn btn-primary book-tickets">View Reviews >></button>
+                                </a>
+                            </div>
+                            <div class="button">
+                                <a routerLink="/theatreList/{{movies?.id}}">
+                                    <button  class=" btn btn-primary book-tickets">Book Tickets</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---------------- Movie_Description ---------------->
+            <div class="container-body">
+                <section class="component1">
+                    <span class="component-desc">
+                        <h4>About the movie</h4>
+                        <div>
+                            <span>{{movies?.about}}</span>
+                        </div>
+                    </span>
+                </section>
+                <section class="component2">
+                    <span class="component-desc">
+                        <h4>Cast</h4>
+                        <div>
+                            <span>{{movies?.cast}}</span>
+                        </div>
+                    </span>
+                </section>
+                <section class="component3">
+                    <span class="component-desc">
+                        <h4>Crew</h4>
+                        <div>
+                            <span>{{movies?.crew}}</span>
+                        </div>
+                    </span>
+                </section>
+            </div>
+        </div>
+        
+    </main>
+  </div>
+<!---------------- Footer ---------------->
+  <div>
+    <footer>
+      <app-footer></app-footer>      
+    </footer>
+  </div>

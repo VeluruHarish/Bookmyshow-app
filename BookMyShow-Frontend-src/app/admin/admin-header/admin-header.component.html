@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" routerLink="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<div class="wrapper">
+  <nav>
+    
+<!---------------- Search Bar -------------------->
+    <input type="checkbox" id="show-search">
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <!--------------- NavBar ------------------------->
+    <div class="content">
+      <div class="logo">
+        <a routerLink="/admin-home"><img src="assets/img/logo.PNG" alt="QubeMovies"></a>
+      </div>
+      <div class="link-div">
+        <ul class="links">
+          <li><a routerLink="/admin-home">Dashboard</a></li>
+          <li><a *ngIf="isLoggedIn()" type="button" class="btn" (click)="logout()" >Logout</a></li>
+          <!-- <li><a routerLink="/add-rating">Manage Ratings</a></li> -->
+          <!-- <li>
+            <a routerLink="#" class="desktop-link">City</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">City</label>
+            <ul>
+              <li><a routerLink="#">Mysore</a></li>
+              <li><a routerLink="#">Bangalore</a></li>
+              <li><a routerLink="#">Mumbai</a></li>
+              <li><a routerLink="#">Chennai</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    
+<!---------------------- Search Bar functionality ------------------------>
+    <!-- <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+    <form action="#" class="search-box">
+      <input type="text" placeholder="Type Something to Search..." required>
+      <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+    </form> -->
+  </nav>
+</div>
+ 

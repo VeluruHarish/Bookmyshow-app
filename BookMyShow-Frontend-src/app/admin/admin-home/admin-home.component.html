@@ -1,0 +1,85 @@
+<!-------------- Header Section--------------->
+<div class="row">
+    <header> 
+        <app-admin-header></app-admin-header>    
+    </header> 
+</div>
+
+<!-------------- Main Body Section--------------->
+<div class="row">
+    <main>
+        <div class="col-md-12 card-container">
+
+          <!-------------- Add Movies Card--------------->
+            <div class="card card-cascade">
+                <div class="view view-cascade overlay">
+                  <img class="card-img-top" src="https://images.unsplash.com/photo-1620336655052-b57986f5a26a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60" alt="Card image cap">
+                </div>
+                <div class="card-body card-body-cascade text-center">
+                  <h3 class="card-title"><strong>Movies</strong></h3>
+                  <a routerLink="/add-movies"> 
+                    <h5 class="font-weight-bold indigo-text">Add Movies</h5>
+                  </a>
+                  <a routerLink="/view-movies"> 
+                    <h5 class="font-weight-bold indigo-text">View Movies</h5>
+                  </a>
+                  <!-- <a type="button" href="/add-movies" class="btn-floating btn-small btn-fb">View More >></a> -->
+                </div>
+            </div>
+
+          <!-------------- Add Multiplex Card--------------->
+            <div class="card card-cascade">
+                <div class="view view-cascade overlay">
+                  <img class="card-img-top" src="https://media.istockphoto.com/id/1194790367/photo/red-seats-in-ciname.jpg?s=612x612&w=0&k=20&c=PXn_UZA8_p-_TIiOyX7b9jE2yoBbDl5O2xncqhffUGc=" alt="Card image cap">
+                </div>
+                <div class="card-body card-body-cascade text-center">
+                  <h3 class="card-title"><strong>Multiplex</strong></h3> 
+                  <a routerLink="/add-multiplex"> 
+                    <h5 class="font-weight-bold indigo-text">Add Multiplex</h5>
+                  </a>
+                  <a routerLink="/view-multiplex"> 
+                    <h5 class="font-weight-bold indigo-text">View Multiplex</h5>
+                  </a>
+                </div>
+            </div>
+
+          <!-------------- Add Ratings Card--------------->            
+            <div class="card card-cascade">
+                <div class="view view-cascade overlay">
+                  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtUjvJ3U94vj5PVpFaqmBpPCOBa2n13sxFrcQjNrWEqBgp52rDjJxP7W4rhn3ylTGkGlU&usqp=CAU" alt="Card image cap">
+                </div>
+                <div class="card-body card-body-cascade text-center">
+                  <h3 class="card-title"><strong>Rating</strong></h3> 
+                  <a routerLink="/add-rating"> 
+                    <h5 class="font-weight-bold indigo-text">Add Rating</h5>
+                  </a>
+                  <a routerLink="/add-rating"> 
+                    <h5 class="font-weight-bold indigo-text">View More>></h5>
+                  </a>
+                </div>
+            </div>
+          <!-------------- Add Shows Card--------------->            
+            <div class="card card-cascade">
+                <div class="view view-cascade overlay">
+                  <img class="card-img-top" src="https://media.istockphoto.com/id/1271522601/photo/pop-corn-and-on-red-armchair-cinema.jpg?s=612x612&w=0&k=20&c=XwQxmfrHb-OwV5onPUW5ApB4RaGBK7poSIzZj4q_N_g=" alt="Card image cap">
+                </div>
+                <div class="card-body card-body-cascade text-center">
+                  <h3 class="card-title"><strong>Shows</strong></h3> 
+                  <a routerLink="/add-shows"> 
+                    <h5 class="font-weight-bold indigo-text">Add Shows</h5>
+                  </a>
+                  <a routerLink="/add-shows"> 
+                    <h5 class="font-weight-bold indigo-text">View More>></h5>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-------------- Footer Section--------------->
+<div class="row">
+    <footer>
+        <app-admin-footer></app-admin-footer>      
+    </footer>
+</div>
